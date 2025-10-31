@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Rural Convento de Montán | Alojamiento Rural en Castellón</title>
+    <meta name="description" content="Casa rural con encanto en Montán, Castellón. 3 habitaciones, 6 personas, junto al Convento de los Servitas. Cerca de Montanejos y Sierra de Espadán.">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .amenity-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .price-badge {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+
+        .sticky-booking {
+            position: sticky;
+            top: 100px;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, #f59e0b, #d97706);
+            border-radius: 2px;
+        }
+
+        .review-card {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+        }
+
+        .star-rating {
+            color: #f59e0b;
+        }
+
+        /* Lightbox mejorado para imágenes más grandes */
+        #lightbox-image {
+            max-width: 95vw !important;
+            max-height: 95vh !important;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white/95 backdrop-blur-md shadow-md fixed top-0 left-0 right-0 z-30">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#inicio" class="text-xl font-bold text-gray-800">Casa Rural Convento de Montán</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#informacion" class="text-gray-600 hover:text-amber-600 transition-colors font-semibold">Información</a>
+                <a href="#servicios" class="text-gray-600 hover:text-amber-600 transition-colors font-semibold">Servicios</a>
+                <a href="#galeria" class="text-gray-600 hover:text-amber-600 transition-colors font-semibold">Galería</a>
+                <a href="#entorno" class="text-gray-600 hover:text-amber-600 transition-colors font-semibold">Entorno</a>
+                <a href="#reserva" class="text-gray-600 hover:text-amber-600 transition-colors font-semibold">Reservar</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden flex items-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <a href="#informacion" class="block py-2 px-4 text-sm hover:bg-gray-100">Información</a>
+            <a href="#servicios" class="block py-2 px-4 text-sm hover:bg-gray-100">Servicios</a>
+            <a href="#galeria" class="block py-2 px-4 text-sm hover:bg-gray-100">Galería</a>
+            <a href="#entorno" class="block py-2 px-4 text-sm hover:bg-gray-100">Entorno</a>
+            <a href="#reserva" class="block py-2 px-4 text-sm hover:bg-gray-100">Reservar</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="relative h-screen flex items-center justify-center text-center text-white">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 hero-overlay z-10"></div>
+            <div
+                class="absolute inset-0 bg-cover bg-center"
+                style="background-image: url('images/m11.jpg');">
+            </div>
+
+            <!-- Content -->
+            <div class="relative z-20 flex flex-col items-center px-4 fade-in-up">
+                <div class="bg-white/10 backdrop-blur-sm px-6 py-2 rounded-full mb-4">
+                    <p class="text-sm font-semibold">★★★★★ Alojamiento con Encanto</p>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4">Casa Rural Convento de Montán</h1>
+                <p class="mt-4 text-xl md:text-3xl max-w-4xl font-semibold">Tu refugio de paz entre Montanejos y la Sierra de Espadán</p>
+                <div class="mt-8 flex flex-col md:flex-row gap-4">
+                    <a href="#reserva" class="px-10 py-4 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-lg shadow-2xl transition-all transform hover:scale-105 text-lg">
+                        Ver Disponibilidad
+                    </a>
+                    <a href="#galeria" class="px-10 py-4 bg-white/20 backdrop-blur-md hover:bg-white/30 text-white font-bold rounded-lg shadow-2xl transition-all border-2 border-white text-lg">
+                        Ver Fotos
+                    </a>
+                </div>
+
+                <!-- Quick Info -->
+                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 bg-white/10 backdrop-blur-md px-8 py-6 rounded-2xl">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold">3</div>
+                        <div class="text-sm">Habitaciones</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold">6</div>
+                        <div class="text-sm">Huéspedes</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold">120m²</div>
+                        <div class="text-sm">Superficie</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold">5km</div>
+                        <div class="text-sm">a Montanejos</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Información Principal -->
+        <section id="informacion" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-4xl font-extrabold text-gray-800 mb-8 text-center section-title">Información del Alojamiento</h2>
+
+                    <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 mb-8 shadow-lg border-2 border-amber-200">
+                        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                            Una casa con mucho <strong>encanto y autenticidad</strong>, situada en el tranquilo pueblo de <strong>Montán</strong>, justo al lado del histórico <strong>Convento de los Servitas (siglo XVIII)</strong>.
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Ofrece un refugio de paz con todas las comodidades modernas, perfecto para desconectar y disfrutar de la naturaleza, la gastronomía local y las aguas termales de Montanejos.
+                        </p>
+                    </div>
+
+                    <!-- Características Principales -->
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-amber-400 transition-colors">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <span class="mr-3 text-3xl">🛏️</span>
+                                Dormitorios
+                            </h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• Habitación 1: Cama de matrimonio (150cm)</li>
+                                <li>• Habitación 2: Dos camas individuales (90cm)</li>
+                                <li>• Habitación 3: Dos camas individuales (90cm)</li>
+                                <li class="font-semibold text-amber-700">Capacidad máxima: 6 personas</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-amber-400 transition-colors">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <span class="mr-3 text-3xl">🚿</span>
+                                Baños
+                            </h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• 1 baño completo con ducha</li>
+                                <li>• Agua caliente</li>
+                                <li>• Toallas y productos de higiene</li>
+                                <li>• Secador de pelo</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Espacios Comunes -->
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 shadow-lg border-2 border-blue-200">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                            <span class="mr-3 text-3xl">🏠</span>
+                            Espacios Comunes
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold text-lg mb-2 text-gray-800">Salón-Comedor</h4>
+                                <ul class="space-y-1 text-gray-700">
+                                    <li>• Chimenea de leña</li>
+                                    <li>• TV con canales TDT</li>
+                                    <li>• Sofás confortables</li>
+                                    <li>• Mesa de comedor para 6-8 personas</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2 text-gray-800">Cocina</h4>
+                                <ul class="space-y-1 text-gray-700">
+                                    <li>• Cocina completa equipada</li>
+                                    <li>• Frigorífico y congelador</li>
+                                    <li>• Microondas, cafetera, tostadora</li>
+                                    <li>• Menaje completo para 8 personas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios y Comodidades -->
+        <section id="servicios" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-gray-800 mb-12 text-center section-title">Servicios y Comodidades</h2>
+
+                <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                    <!-- WiFi -->
+                    <div class="bg-white rounded-xl p-6 text-center feature-card transition-all duration-300 shadow-md">
+                        <div class="amenity-icon mx-auto">📶</div>
+                        <h3 class="font-bold text-gray-800 mb-2">WiFi Gratis</h3>
+                        <p class="text-sm text-gray-600">Internet de alta velocidad</p>
+                    </div>
+
+                    <!-- Calefacción -->
+                    <div class="bg-white rounded-xl p-6 text-center feature-card transition-all duration-300 shadow-md">
+                        <div class="amenity-icon mx-auto">🔥</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Calefacción</h3>
+                        <p class="text-sm text-gray-600">Chimenea + radiadores</p>
+                    </div>
+
+                    <!-- Cocina -->
+                    <div class="bg-white rounded-xl p-6 text-center feature-card transition-all duration-300 shadow-md">
+                        <div class="amenity-icon mx-auto">🍳</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Cocina Equipada</h3>
+                        <p class="text-sm text-gray-600">Todo lo necesario</p>
+                    </div>
+
+                    <!-- Parking -->
+                    <div class="bg-white rounded-xl p-6 text-center feature-card transition-all duration-300 shadow-md">
+                        <div class="amenity-icon mx-auto">🚗</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Parking</h3>
+                        <p class="text-sm text-gray-600">Zona de aparcamiento</p>
+                    </div>
+
+                    <!-- Ropa de cama -->
+                    <div class="bg-white rounded-xl p-6 text-center feature-card transition-all duration-300 shadow-md">
+                        <div class="amenity-icon mx-auto">🛏️</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Ropa de Cama</h3>
+                        <p class="text-sm text-gray-600">Incluida</p>
+                    </div>
+
+                    <!-- Toallas -->
+                    <div class="bg-white rounded-xl p-6 text-center feature-card transition-all duration-300 shadow-md">
+                        <div class="amenity-icon mx-auto">🧺</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Toallas</h3>
+                        <p class="text-sm text-gray-600">Incluidas</p>
+                    </div>
+
+                    <!-- Vistas -->
+                    <div class="bg-white rounded-xl p-6 text-center feature-card transition-all duration-300 shadow-md">
+                        <div class="amenity-icon mx-auto">🏔️</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Vistas</h3>
+                        <p class="text-sm text-gray-600">Al pueblo y montaña</p>
+                    </div>
+
+                    <!-- Mascotas -->
+                    <div class="bg-white rounded-xl p-6 text-center feature-card transition-all duration-300 shadow-md">
+                        <div class="amenity-icon mx-auto">🐕</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Mascotas</h3>
+                        <p class="text-sm text-gray-600">Consultar disponibilidad</p>
+                    </div>
+                </div>
+
+                <!-- Normas de la Casa -->
+                <div class="max-w-4xl mx-auto mt-16 bg-white rounded-2xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Normas de la Casa</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-lg mb-4 text-amber-700">✓ Permitido</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>✓ Check-in: Flexible (coordinar con anfitrión)</li>
+                                <li>✓ Check-out: Hasta las 12:00</li>
+                                <li>✓ Familias con niños</li>
+                                <li>✓ Eventos bajo consulta</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-4 text-red-700">✗ No Permitido</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>✗ Fumar en el interior</li>
+                                <li>✗ Fiestas ruidosas</li>
+                                <li>✗ Exceder capacidad máxima</li>
+                                <li>✗ Mascotas sin autorización previa</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería -->
+        <section id="galeria" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-gray-800 mb-12 text-center section-title">Galería de Fotos</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <img src="images/m1.jpg" alt="Fachada de la casa rural" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="images/m2.jpg" alt="Comedor con chimenea" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="images/m3.jpg" alt="Cocina totalmente equipada" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="images/m4.jpg" alt="Salón acogedor" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="images/m5.jpg" alt="Baño moderno" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="images/m6.jpg" alt="Habitación de matrimonio" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="images/m7.jpg" alt="Habitación doble" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="images/m8.jpg" alt="Detalle del pasillo" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="images/m9.jpg" alt="Entrada de la casa" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="images/m10.jpg" alt="Vistas del pueblo" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="images/m11.jpg" alt="Decoración interior" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="images/m12.jpg" alt="Placa de la casa rural" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                </div>
+            </div>
+        </section>
+
+        <!-- Qué Hacer en la Zona -->
+        <section id="entorno" class="py-20 bg-gradient-to-br from-green-50 to-emerald-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-gray-800 mb-8 text-center section-title">Descubre el Entorno</h2>
+                <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-12">
+                    Montán te ofrece la tranquilidad de un auténtico pueblo de montaña, mientras que a pocos minutos disfrutas de las aguas termales de Montanejos y las rutas de la Sierra de Espadán.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Montanejos -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden feature-card transition-all duration-300">
+                        <div class="bg-gradient-to-br from-blue-500 to-cyan-500 h-48 flex items-center justify-center">
+                            <span class="text-7xl">💧</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800">Aguas Termales de Montanejos</h3>
+                            <p class="text-gray-600 mb-4">A solo 5 km, sumérgete en la Fuente de los Baños con aguas termales a 25°C todo el año. Un paraíso natural para relajarte.</p>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>🏊 Baño en aguas termales naturales</li>
+                                <li>🚣 Rafting y kayak en el río Mijares</li>
+                                <li>🧗 Escalada en Chillapájaros</li>
+                                <li>🥾 11 rutas de senderismo señalizadas</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Sierra de Espadán -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden feature-card transition-all duration-300">
+                        <div class="bg-gradient-to-br from-green-500 to-emerald-600 h-48 flex items-center justify-center">
+                            <span class="text-7xl">🌲</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800">Parque Natural Sierra de Espadán</h3>
+                            <p class="text-gray-600 mb-4">Explora uno de los parques naturales más bellos de la Comunidad Valenciana, con sus característicos alcornocales.</p>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>🚴 Vía Verde de Ojos Negros (160 km)</li>
+                                <li>🥾 Senderismo entre alcornoques</li>
+                                <li>🦅 Observación de fauna salvaje</li>
+                                <li>📸 Paisajes de montaña espectaculares</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Cultura e Historia -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden feature-card transition-all duration-300">
+                        <div class="bg-gradient-to-br from-amber-500 to-orange-500 h-48 flex items-center justify-center">
+                            <span class="text-7xl">🏛️</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800">Patrimonio Cultural</h3>
+                            <p class="text-gray-600 mb-4">Descubre la historia y tradiciones de la zona, con pueblos con encanto y monumentos únicos.</p>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>⛪ Convento de los Servitas (s. XVIII)</li>
+                                <li>💧 Fuente de las Doncellas y leyendas</li>
+                                <li>🏘️ Más de 35 fuentes en Montán</li>
+                                <li>🍷 Gastronomía y productos locales</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Distancias -->
+                <div class="mt-12 max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Distancias desde la Casa Rural</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex items-center justify-between border-b pb-3">
+                            <span class="text-gray-700 font-semibold">🚗 Montanejos (aguas termales)</span>
+                            <span class="text-amber-600 font-bold">5 km</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b pb-3">
+                            <span class="text-gray-700 font-semibold">🚗 Vía Verde Ojos Negros</span>
+                            <span class="text-amber-600 font-bold">8 km</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b pb-3">
+                            <span class="text-gray-700 font-semibold">🚗 Segorbe</span>
+                            <span class="text-amber-600 font-bold">35 km</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b pb-3">
+                            <span class="text-gray-700 font-semibold">🚗 Castellón de la Plana</span>
+                            <span class="text-amber-600 font-bold">73 km</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b pb-3">
+                            <span class="text-gray-700 font-semibold">🚗 Valencia</span>
+                            <span class="text-amber-600 font-bold">85 km</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b pb-3">
+                            <span class="text-gray-700 font-semibold">✈️ Aeropuerto de Valencia</span>
+                            <span class="text-amber-600 font-bold">95 km</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reseñas -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-gray-800 mb-12 text-center section-title">Lo Que Dicen Nuestros Huéspedes</h2>
+
+                <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+                    <div class="review-card rounded-2xl p-6 shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="star-rating text-2xl">★★★★★</div>
+                            <span class="ml-3 font-bold text-gray-800">10/10</span>
+                        </div>
+                        <p class="text-gray-700 italic mb-4">"Una casa preciosa, muy bien equipada y con todo lo necesario. La ubicación es perfecta para visitar Montanejos y hacer senderismo. El pueblo es tranquilo y con mucho encanto. ¡Volveremos sin duda!"</p>
+                        <p class="text-sm text-gray-600 font-semibold">— María y familia (Agosto 2024)</p>
+                    </div>
+
+                    <div class="review-card rounded-2xl p-6 shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="star-rating text-2xl">★★★★★</div>
+                            <span class="ml-3 font-bold text-gray-800">9.5/10</span>
+                        </div>
+                        <p class="text-gray-700 italic mb-4">"Escapada perfecta para desconectar. La chimenea le da un toque especial en invierno. Salvador es un anfitrión atento y flexible con los horarios. Casa muy limpia y cómoda."</p>
+                        <p class="text-sm text-gray-600 font-semibold">— Carlos y Ana (Diciembre 2024)</p>
+                    </div>
+
+                    <div class="review-card rounded-2xl p-6 shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="star-rating text-2xl">★★★★★</div>
+                            <span class="ml-3 font-bold text-gray-800">10/10</span>
+                        </div>
+                        <p class="text-gray-700 italic mb-4">"Ideal para ir con amigos. Las 3 habitaciones son espaciosas y la cocina tiene de todo. Fuimos a las piscinas naturales de Montanejos todos los días. Experiencia increíble."</p>
+                        <p class="text-sm text-gray-600 font-semibold">— Grupo de amigos (Julio 2024)</p>
+                    </div>
+
+                    <div class="review-card rounded-2xl p-6 shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="star-rating text-2xl">★★★★★</div>
+                            <span class="ml-3 font-bold text-gray-800">9/10</span>
+                        </div>
+                        <p class="text-gray-700 italic mb-4">"Casa con mucho encanto y autenticidad. El convento al lado es impresionante. Perfecto para quien busca tranquilidad y naturaleza. Recomendado 100%."</p>
+                        <p class="text-sm text-gray-600 font-semibold">— Laura y David (Octubre 2024)</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <div class="inline-block bg-gradient-to-r from-amber-500 to-orange-500 text-white px-8 py-4 rounded-full shadow-lg">
+                        <p class="text-3xl font-extrabold">9.6/10</p>
+                        <p class="text-sm font-semibold">Valoración media (42 reseñas)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reserva y Contacto -->
+        <section id="reserva" class="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-gray-800 mb-8 text-center section-title">Reserva Tu Estancia</h2>
+
+                <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
+                    <!-- Información de Precios -->
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Precios y Disponibilidad</h3>
+
+                        <div class="space-y-6 mb-8">
+                            <div class="border-l-4 border-amber-500 pl-4">
+                                <h4 class="font-bold text-lg text-gray-800">Temporada Alta</h4>
+                                <p class="text-gray-600 text-sm mb-2">Julio, Agosto, Semana Santa, puentes</p>
+                                <p class="text-3xl font-extrabold text-amber-600">150€ <span class="text-sm font-normal text-gray-600">/ noche</span></p>
+                            </div>
+
+                            <div class="border-l-4 border-green-500 pl-4">
+                                <h4 class="font-bold text-lg text-gray-800">Temporada Media</h4>
+                                <p class="text-gray-600 text-sm mb-2">Primavera, otoño, fines de semana</p>
+                                <p class="text-3xl font-extrabold text-green-600">120€ <span class="text-sm font-normal text-gray-600">/ noche</span></p>
+                            </div>
+
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h4 class="font-bold text-lg text-gray-800">Temporada Baja</h4>
+                                <p class="text-gray-600 text-sm mb-2">Entre semana (excepto festivos)</p>
+                                <p class="text-3xl font-extrabold text-blue-600">100€ <span class="text-sm font-normal text-gray-600">/ noche</span></p>
+                            </div>
+                        </div>
+
+                        <div class="bg-green-50 border-2 border-green-200 rounded-xl p-6 mb-6">
+                            <p class="text-sm text-gray-700 mb-2">
+                                <strong class="text-green-700">✓ Incluido en el precio:</strong>
+                            </p>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Limpieza final</li>
+                                <li>• Ropa de cama y toallas</li>
+                                <li>• WiFi gratis</li>
+                                <li>• Calefacción y agua caliente</li>
+                                <li>• Parking gratuito</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                            <p class="text-sm text-gray-700">
+                                <strong>📅 Estancia mínima:</strong> 2 noches (3 noches en temporada alta)
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Formulario de Contacto -->
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl shadow-xl p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-6">Contacta con Nosotros</h3>
+                        <p class="mb-8 text-blue-50">
+                            ¿Listo para tu escapada? Contáctanos directamente para consultar disponibilidad, hacer tu reserva o resolver cualquier duda.
+                        </p>
+
+                        <div class="space-y-6 mb-8">
+                            <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                                <span class="text-3xl mr-4">📧</span>
+                                <div>
+                                    <p class="font-semibold text-sm">Email</p>
+                                    <p class="text-lg">salvalujan@gmail.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                                <span class="text-3xl mr-4">📱</span>
+                                <div>
+                                    <p class="font-semibold text-sm">WhatsApp</p>
+                                    <p class="text-lg">+34 626 334 988</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <a href="mailto:salvalujan@gmail.com?subject=Consulta Casa Rural Montán"
+                               class="block w-full px-8 py-4 bg-white text-blue-600 font-bold rounded-lg shadow-lg hover:bg-gray-50 transition-all transform hover:scale-105 text-center">
+                                📧 Enviar Email
+                            </a>
+                            <a href="https://wa.me/34626334988?text=Hola, me gustaría consultar disponibilidad para la Casa Rural Convento de Montán"
+                               target="_blank"
+                               class="block w-full px-8 py-4 bg-green-600 text-white font-bold rounded-lg shadow-lg hover:bg-green-700 transition-all transform hover:scale-105 text-center">
+                                💬 WhatsApp Directo
+                            </a>
+                        </div>
+
+                        <p class="mt-8 text-sm text-blue-50 text-center">
+                            ⚡ Respuesta en menos de 24 horas
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Políticas de Cancelación -->
+                <div class="max-w-5xl mx-auto mt-12 bg-white rounded-2xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Política de Cancelación</h3>
+                    <div class="grid md:grid-cols-3 gap-6 text-center">
+                        <div>
+                            <div class="text-4xl mb-3">✅</div>
+                            <h4 class="font-bold text-gray-800 mb-2">Cancelación Gratuita</h4>
+                            <p class="text-sm text-gray-600">Hasta 30 días antes de la llegada</p>
+                        </div>
+                        <div>
+                            <div class="text-4xl mb-3">⚠️</div>
+                            <h4 class="font-bold text-gray-800 mb-2">Reembolso del 50%</h4>
+                            <p class="text-sm text-gray-600">Entre 30 y 7 días antes</p>
+                        </div>
+                        <div>
+                            <div class="text-4xl mb-3">❌</div>
+                            <h4 class="font-bold text-gray-800 mb-2">Sin Reembolso</h4>
+                            <p class="text-sm text-gray-600">Menos de 7 días antes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden">
+            <span id="close-lightbox" class="absolute top-4 right-4 text-white text-4xl cursor-pointer p-4 hover:text-amber-400 transition-colors">&times;</span>
+            <img id="lightbox-image" src="" alt="Imagen ampliada" style="max-width: 95vw; max-height: 95vh; width: auto; height: auto; object-fit: contain;" class="rounded-lg shadow-2xl">
+        </div>
+
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-amber-400">Casa Rural Convento de Montán</h3>
+                    <p class="text-gray-400 text-sm">
+                        Tu refugio de paz en el corazón del Alto Mijares, entre Montanejos y la Sierra de Espadán.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-amber-400">Contacto</h3>
+                    <p class="text-gray-400 text-sm mb-2">📧 salvalujan@gmail.com</p>
+                    <p class="text-gray-400 text-sm mb-2">📱 +34 626 334 988</p>
+                    <p class="text-gray-400 text-sm">📍 Montán, Castellón</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-amber-400">Enlaces Rápidos</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#informacion" class="text-gray-400 hover:text-amber-400 transition-colors">Información</a></li>
+                        <li><a href="#servicios" class="text-gray-400 hover:text-amber-400 transition-colors">Servicios</a></li>
+                        <li><a href="#galeria" class="text-gray-400 hover:text-amber-400 transition-colors">Galería</a></li>
+                        <li><a href="#reserva" class="text-gray-400 hover:text-amber-400 transition-colors">Reservar</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-500 text-sm">&copy; 2024 Casa Rural Convento de Montán. Todos los derechos reservados.</p>
+                <p class="text-gray-600 text-xs mt-2">Diseño web profesional optimizado para reservas</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Lightbox functionality
+        const galleryImages = document.querySelectorAll('#galeria img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const closeLightbox = document.getElementById('close-lightbox');
+
+        galleryImages.forEach(image => {
+            image.addEventListener('click', () => {
+                lightbox.classList.remove('hidden');
+                lightboxImage.src = image.src;
+            });
+        });
+
+        closeLightbox.addEventListener('click', () => {
+            lightbox.classList.add('hidden');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.add('hidden');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+</html>
