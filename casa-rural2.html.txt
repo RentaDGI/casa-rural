@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa del Convento - Apartamentos Rurales en Montán</title>
+    <meta name="description" content="Apartamentos rurales en el Convento de los Servitas, Montán. 1 y 3 dormitorios, hasta 5 personas. WiFi gratis, vistas a la montaña.">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .amenity-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .price-badge {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+        .sticky-booking {
+            position: sticky;
+            top: 100px;
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 1rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, #f59e0b, #d97706);
+            border-radius: 2px;
+        }
+        .review-card {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+        }
+        .star-rating {
+            color: #f59e0b;
+        }
+        /* Lightbox mejorado para imágenes más grandes */
+        #lightbox-image {
+            max-width: 95vw !important;
+            max-height: 95vh !important;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-white/95 backdrop-blur-md shadow-md fixed top-0 left-0 right-0 z-30">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#inicio" class="text-xl font-bold text-gray-800">Casa del Convento</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#informacion" class="text-gray-600 hover:text-amber-600 transition-colors font-semibold">Información</a>
+                <a href="#servicios" class="text-gray-600 hover:text-amber-600 transition-colors font-semibold">Servicios</a>
+                <a href="#galeria" class="text-gray-600 hover:text-amber-600 transition-colors font-semibold">Galería</a>
+                <a href="#entorno" class="text-gray-600 hover:text-amber-600 transition-colors font-semibold">Entorno</a>
+                <a href="#anfitrion" class="text-gray-600 hover:text-amber-600 transition-colors font-semibold">Anfitrión</a>
+                <a href="#faq" class="text-gray-600 hover:text-amber-600 transition-colors font-semibold">FAQ</a>
+                <a href="#reserva" class="text-gray-600 hover:text-amber-600 transition-colors font-semibold">Reservar</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden flex items-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <a href="#informacion" class="block py-2 px-4 text-sm hover:bg-gray-100">Información</a>
+            <a href="#servicios" class="block py-2 px-4 text-sm hover:bg-gray-100">Servicios</a>
+            <a href="#galeria" class="block py-2 px-4 text-sm hover:bg-gray-100">Galería</a>
+            <a href="#entorno" class="block py-2 px-4 text-sm hover:bg-gray-100">Entorno</a>
+            <a href="#anfitrion" class="block py-2 px-4 text-sm hover:bg-gray-100">Anfitrión</a>
+            <a href="#faq" class="block py-2 px-4 text-sm hover:bg-gray-100">FAQ</a>
+            <a href="#reserva" class="block py-2 px-4 text-sm hover:bg-gray-100">Reservar</a>
+        </div>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="relative h-screen flex items-center justify-center text-center text-white">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 hero-overlay z-10"></div>
+            <div
+                class="absolute inset-0 bg-cover bg-center"
+                style="background-image: url('https://i.imgur.com/wXbV2um.jpeg');">
+            </div>
+            <!-- Content -->
+            <div class="relative z-20 flex flex-col items-center px-4 fade-in-up">
+                <div class="bg-white/10 backdrop-blur-sm px-6 py-2 rounded-full mb-4">
+                    <p class="text-sm font-semibold">★★★★★ Alojamiento con Encanto</p>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4">Casa del Convento</h1>
+                <p class="mt-4 text-xl md:text-3xl max-w-4xl font-semibold">Apartamentos rurales en el Convento de los Servitas</p>
+                <div class="mt-8 flex flex-col md:flex-row gap-4">
+                    <a href="#reserva" class="px-10 py-4 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-lg shadow-2xl transition-all transform hover:scale-105 text-lg">
+                        Ver Disponibilidad
+                    </a>
+                    <a href="#galeria" class="px-10 py-4 bg-white/20 backdrop-blur-md hover:bg-white/30 text-white font-bold rounded-lg shadow-2xl transition-all border-2 border-white text-lg">
+                        Ver Fotos
+                    </a>
+                </div>
+                <!-- Quick Info -->
+                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 bg-white/10 backdrop-blur-md px-8 py-6 rounded-2xl">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold">2</div>
+                        <div class="text-sm">Apartamentos</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold">5</div>
+                        <div class="text-sm">Huéspedes máx.</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold">77m²</div>
+                        <div class="text-sm">Superficie máx.</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold">200m</div>
+                        <div class="text-sm">a la plaza</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Información Principal -->
+        <section id="informacion" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-4xl font-extrabold text-gray-800 mb-8 text-center section-title">Información del Alojamiento</h2>
+                    <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 mb-8 shadow-lg border-2 border-amber-200">
+                        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                            La <strong>Casa del Convento</strong> está compuesta por 2 apartamentos independientes ubicados en el histórico <strong>Convento de los Servitas</strong>, declarado como Monumento de Relevancia Local.
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Situados en la Plaza de Sol, 3, en Montán, estos apartamentos ofrecen una experiencia única combinando historia y comodidad moderna con vistas a la montaña y al entorno del claustro.
+                        </p>
+                    </div>
+                    <!-- Características Principales -->
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-amber-400 transition-colors">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <span class="mr-3 text-3xl">🛏️</span>
+                                Apartamento 1 (Casa de los Servitas)
+                            </h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• 1 dormitorio con cama doble</li>
+                                <li>• Sala de estar con sofá cama</li>
+                                <li>• Vistas al claustro o plaza de los Servitas</li>
+                                <li>• TV de 50 pulgadas</li>
+                                <li class="font-semibold text-amber-700">Capacidad máxima: 4 personas</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-amber-400 transition-colors">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <span class="mr-3 text-3xl">🏙️</span>
+                                Apartamento 2 (Casa del Sol)
+                            </h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• 3 dormitorios (2 dobles y 1 individual)</li>
+                                <li>• Rincón para juegos</li>
+                                <li>• TV de 42 pulgadas</li>
+                                <li>• Vistas al pueblo, montaña o claustro</li>
+                                <li class="font-semibold text-amber-700">Capacidad máxima: 5 personas</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Detalles de los apartamentos -->
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 shadow-lg border-2 border-blue-200">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                            <span class="mr-3 text-3xl">🏠</span>
+                            Detalles de los Apartamentos
+                        </h3>
+                        <div class="space-y-8">
+                            <div>
+                                <h4 class="font-bold text-lg mb-3 text-gray-800">Apartamento de 1 dormitorio (Casa de los Servitas)</h4>
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <h5 class="font-semibold text-gray-700 mb-2">Dormitorio:</h5>
+                                        <ul class="space-y-1 text-sm text-gray-600">
+                                            <li>• 1 cama doble</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-700 mb-2">Sala de estar:</h5>
+                                        <ul class="space-y-1 text-sm text-gray-600">
+                                            <li>• 1 sofá cama</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <h5 class="font-semibold text-gray-700 mb-2">Características:</h5>
+                                    <ul class="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm text-gray-600">
+                                        <li>• 76 m²</li>
+                                        <li>• Balcón</li>
+                                        <li>• Vistas a la montaña</li>
+                                        <li>• Vistas a la ciudad</li>
+                                        <li>• Vistas a un patio interior</li>
+                                        <li>• TV de pantalla plana</li>
+                                        <li>• Cafetera</li>
+                                        <li>• WiFi gratis</li>
+                                        <li>• Artículos de aseo gratis</li>
+                                        <li>• Cocina</li>
+                                        <li>• Lavadora</li>
+                                        <li>• WC</li>
+                                        <li>• Sofá</li>
+                                        <li>• Bañera o ducha</li>
+                                        <li>• Suelo de madera o parquet</li>
+                                        <li>• Toallas</li>
+                                        <li>• Ropa de cama</li>
+                                        <li>• Enchufe cerca de la cama</li>
+                                        <li>• Productos de limpieza</li>
+                                        <li>• Nevera</li>
+                                        <li>• Microondas</li>
+                                        <li>• Calefacción</li>
+                                        <li>• Secador de pelo</li>
+                                        <li>• Utensilios de cocina</li>
+                                        <li>• Zona de cocina</li>
+                                        <li>• Ventilador</li>
+                                        <li>• Armario</li>
+                                        <li>• Tostadora</li>
+                                        <li>• Mesa de comedor</li>
+                                        <li>• Detector de monóxido de carbono</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-3 text-gray-800">Apartamento de 3 dormitorios (Casa del Sol)</h4>
+                                <div class="grid md:grid-cols-3 gap-6">
+                                    <div>
+                                        <h5 class="font-semibold text-gray-700 mb-2">Dormitorio 1:</h5>
+                                        <ul class="space-y-1 text-sm text-gray-600">
+                                            <li>• 1 cama individual</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-700 mb-2">Dormitorio 2:</h5>
+                                        <ul class="space-y-1 text-sm text-gray-600">
+                                            <li>• 1 cama doble</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-700 mb-2">Dormitorio 3:</h5>
+                                        <ul class="space-y-1 text-sm text-gray-600">
+                                            <li>• 1 cama doble</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <h5 class="font-semibold text-gray-700 mb-2">Características:</h5>
+                                    <ul class="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm text-gray-600">
+                                        <li>• 77 m²</li>
+                                        <li>• Balcón</li>
+                                        <li>• Vistas a la montaña</li>
+                                        <li>• Vistas a la ciudad</li>
+                                        <li>• Vistas a un patio interior</li>
+                                        <li>• TV de pantalla plana</li>
+                                        <li>• Cafetera</li>
+                                        <li>• WiFi gratis</li>
+                                        <li>• Artículos de aseo gratis</li>
+                                        <li>• Cocina</li>
+                                        <li>• Lavadora</li>
+                                        <li>• WC</li>
+                                        <li>• Sofá</li>
+                                        <li>• Bañera o ducha</li>
+                                        <li>• Suelo de madera o parquet</li>
+                                        <li>• Toallas</li>
+                                        <li>• Ropa de cama</li>
+                                        <li>• Enchufe cerca de la cama</li>
+                                        <li>• Productos de limpieza</li>
+                                        <li>• Nevera</li>
+                                        <li>• Microondas</li>
+                                        <li>• Calefacción</li>
+                                        <li>• Secador de pelo</li>
+                                        <li>• Utensilios de cocina</li>
+                                        <li>• Zona de cocina</li>
+                                        <li>• Ventilador</li>
+                                        <li>• Armario</li>
+                                        <li>• Tostadora</li>
+                                        <li>• Mesa de comedor</li>
+                                        <li>• Detector de monóxido de carbono</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Servicios y Comodidades -->
+        <section id="servicios" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-gray-800 mb-12 text-center section-title">Servicios y Comodidades</h2>
+                <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                    <!-- WiFi -->
+                    <div class="bg-white rounded-xl p-6 text-center feature-card transition-all duration-300 shadow-md">
+                        <div class="amenity-icon mx-auto">📶</div>
+                        <h3 class="font-bold text-gray-800 mb-2">WiFi Gratis</h3>
+                        <p class="text-sm text-gray-600">Internet de alta velocidad</p>
+                    </div>
+                    <!-- Calefacción -->
+                    <div class="bg-white rounded-xl p-6 text-center feature-card transition-all duration-300 shadow-md">
+                        <div class="amenity-icon mx-auto">🔥</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Calefacción</h3>
+                        <p class="text-sm text-gray-600">Radiadores</p>
+                    </div>
+                    <!-- Cocina -->
+                    <div class="bg-white rounded-xl p-6 text-center feature-card transition-all duration-300 shadow-md">
+                        <div class="amenity-icon mx-auto">🍳</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Cocina Equipada</h3>
+                        <p class="text-sm text-gray-600">Todo lo necesario</p>
+                    </div>
+                    <!-- Parking -->
+                    <div class="bg-white rounded-xl p-6 text-center feature-card transition-all duration-300 shadow-md">
+                        <div class="amenity-icon mx-auto">🚗</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Parking</h3>
+                        <p class="text-sm text-gray-600">Parking público gratis</p>
+                    </div>
+                    <!-- Ropa de cama -->
+                    <div class="bg-white rounded-xl p-6 text-center feature-card transition-all duration-300 shadow-md">
+                        <div class="amenity-icon mx-auto">🛏️</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Ropa de Cama</h3>
+                        <p class="text-sm text-gray-600">Incluida</p>
+                    </div>
+                    <!-- Toallas -->
+                    <div class="bg-white rounded-xl p-6 text-center feature-card transition-all duration-300 shadow-md">
+                        <div class="amenity-icon mx-auto">🧺</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Toallas</h3>
+                        <p class="text-sm text-gray-600">Incluidas</p>
+                    </div>
+                    <!-- Vistas -->
+                    <div class="bg-white rounded-xl p-6 text-center feature-card transition-all duration-300 shadow-md">
+                        <div class="amenity-icon mx-auto">🏔️</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Vistas</h3>
+                        <p class="text-sm text-gray-600">Montaña y claustro</p>
+                    </div>
+                    <!-- Mascotas -->
+                    <div class="bg-white rounded-xl p-6 text-center feature-card transition-all duration-300 shadow-md">
+                        <div class="amenity-icon mx-auto">🐕</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Mascotas</h3>
+                        <p class="text-sm text-gray-600">Consultar disponibilidad</p>
+                    </div>
+                </div>
+                <!-- Normas de la Casa -->
+                <div class="max-w-4xl mx-auto mt-16 bg-white rounded-2xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Normas de la Casa</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-lg mb-4 text-amber-700">✓ Permitido</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>✓ Check-in: 14:00 - 23:30</li>
+                                <li>✓ Check-out: 8:00 - 10:00</li>
+                                <li>✓ Niños de todas las edades</li>
+                                <li>✓ Cunas bajo petición (gratis)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-4 text-red-700">✗ No Permitido</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>✗ Fumar en el interior</li>
+                                <li>✗ Fiestas ruidosas</li>
+                                <li>✗ Ruido entre 23:00 - 9:00</li>
+                                <li>✗ Exceder capacidad máxima</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Galería -->
+        <section id="galeria" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-gray-800 mb-12 text-center section-title">Galería de Fotos</h2>
+                <!-- Apartamento 1 -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Apartamento 1 - Casa de los Servitas</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        <img src="https://i.imgur.com/wXbV2um.jpeg" alt="Habitación con cama doble" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                        <img src="https://i.imgur.com/4P4X2eM.jpeg" alt="Baño moderno" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                        <img src="https://i.imgur.com/db08GH6.jpeg" alt="Salón acogedor" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                        <img src="https://i.imgur.com/cGcJ45l.jpeg" alt="Cocina totalmente equipada" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    </div>
+                </div>
+                <!-- Apartamento 2 -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Apartamento 2 - Casa del Sol</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        <img src="https://i.imgur.com/rbrvfqC.jpeg" alt="Habitación doble" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                        <img src="https://i.imgur.com/VQ79Mrn.jpeg" alt="Detalle del pasillo" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                        <img src="https://i.imgur.com/qfLyZVq.jpeg" alt="Comedor con chimenea" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                        <img src="https://i.imgur.com/URIglz7.jpeg" alt="Entrada de la casa" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    </div>
+                </div>
+                <!-- Edificio General -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Edificio General - Convento de los Servitas</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        <img src="https://i.imgur.com/3n6RS6x.jpeg" alt="Fachada de la casa rural" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                        <img src="https://i.imgur.com/URIglz7.jpeg" alt="Entrada de la casa" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                        <img src="https://i.imgur.com/db08GH6.jpeg" alt="Salón acogedor" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                        <img src="https://i.imgur.com/4P4X2eM.jpeg" alt="Baño moderno" class="rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Anfitrión -->
+        <section id="anfitrion" class="py-20 bg-gradient-to-br from-purple-50 to-indigo-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-gray-800 mb-12 text-center section-title">Conoce a tu Anfitrión</h2>
+                <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8 flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+                        <div class="bg-gradient-to-br from-purple-500 to-indigo-600 w-32 h-32 rounded-full flex items-center justify-center text-white text-6xl">
+                            S
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 md:pl-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Salva</h3>
+                        <p class="text-gray-700 mb-4">
+                            Se trata del antiguo convento de los Padres Servitas único en España por su construcción, está declarado como Monumento de Relevancia Local. La Casa del convento está compuesta por 2 apartamentos independientes que comparten un tramo de escalera de 15 peldaños.
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            Me encanta que mis huéspedes se sientan como en su propia casa. Me gusta estar disponible y colaborar en todo lo que pueda para que la estancia sea perfecta, pero sin molestar ni interferir en la estancia.
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            Es un sitio único, en lo alto del pueblo de Montán, La Casa del Convento está ubicada en el mismo Convento de los Servitas, junto a la Iglesia que podrás visitar junto al claustro y la cripta que se encuentra en el sótano. pero a tan solo 5 minutos andando de la plaza del pueblo y de la tienda, Carniceria y bares.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">Habla español</span>
+                            <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">Habla inglés</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Qué Hacer en la Zona -->
+        <section id="entorno" class="py-20 bg-gradient-to-br from-green-50 to-emerald-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-gray-800 mb-8 text-center section-title">Descubre el Entorno</h2>
+                <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-12">
+                    Montán te ofrece la tranquilidad de un auténtico pueblo de montaña, mientras que a pocos minutos disfrutas de las aguas termales de Montanejos y las rutas de la Sierra de Espadán.
+                </p>
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Montanejos -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden feature-card transition-all duration-300">
+                        <div class="bg-gradient-to-br from-blue-500 to-cyan-500 h-48 flex items-center justify-center">
+                            <span class="text-7xl">💧</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800">Aguas Termales de Montanejos</h3>
+                            <p class="text-gray-600 mb-4">A solo 5 km, disfruta de las aguas termales naturales y de las actividades al aire libre en el entorno del río Mijares.</p>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>🏊 Balneario con aguas termales</li>
+                                <li>河道 Rafting y kayak en el río Mijares</li>
+                                <li>🥾 Rutas de senderismo señalizadas</li>
+                                <li>🍽️ Gastronomía local</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Sierra de Espadán -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden feature-card transition-all duration-300">
+                        <div class="bg-gradient-to-br from-green-500 to-emerald-600 h-48 flex items-center justify-center">
+                            <span class="text-7xl">🌲</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800">Parque Natural Sierra de Espadán</h3>
+                            <p class="text-gray-600 mb-4">Explora uno de los parques naturales más bellos de la Comunidad Valenciana, con sus característicos alcornocales.</p>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>🚴 Vía Verde de Ojos Negros (160 km)</li>
+                                <li>🥾 Senderismo entre alcornoques</li>
+                                <li>🦅 Observación de fauna salvaje</li>
+                                <li>📸 Paisajes de montaña espectaculares</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Cultura e Historia -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden feature-card transition-all duration-300">
+                        <div class="bg-gradient-to-br from-amber-500 to-orange-500 h-48 flex items-center justify-center">
+                            <span class="text-7xl">🏛️</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800">Patrimonio Cultural</h3>
+                            <p class="text-gray-600 mb-4">Descubre la historia y tradiciones de la zona, con pueblos con encanto y monumentos únicos.</p>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>⛪ Convento de los Servitas (s. XVIII)</li>
+                                <li>⛪ Iglesia y criptas del convento</li>
+                                <li>🗺️ Cueva de Cirat y yacimiento arqueológico</li>
+                                <li>🌊 Ruta del agua</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Distancias -->
+                <div class="mt-12 max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Distancias desde la Casa del Convento</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex items-center justify-between border-b pb-3">
+                            <span class="text-gray-700 font-semibold">🚗 Montanejos (aguas termales)</span>
+                            <span class="text-amber-600 font-bold">5 km</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b pb-3">
+                            <span class="text-gray-700 font-semibold">🚗 Vía Verde Ojos Negros</span>
+                            <span class="text-amber-600 font-bold">8 km</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b pb-3">
+                            <span class="text-gray-700 font-semibold">🚗 Segorbe</span>
+                            <span class="text-amber-600 font-bold">35 km</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b pb-3">
+                            <span class="text-gray-700 font-semibold">🚗 Castellón de la Plana</span>
+                            <span class="text-amber-600 font-bold">73 km</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b pb-3">
+                            <span class="text-gray-700 font-semibold">🚗 Valencia</span>
+                            <span class="text-amber-600 font-bold">85 km</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b pb-3">
+                            <span class="text-gray-700 font-semibold">✈️ Aeropuerto de Valencia</span>
+                            <span class="text-amber-600 font-bold">88 km</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FAQ -->
+        <section id="faq" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-gray-800 mb-12 text-center section-title">Preguntas Frecuentes</h2>
+                <div class="max-w-4xl mx-auto space-y-6">
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">¿Cuántas personas pueden dormir en Casa del Convento?</h3>
+                        <p class="text-gray-700">En Casa del Convento puedes elegir entre varias opciones de alojamiento (sujeto a disponibilidad). Tienen capacidad para: 4 personas (Apartamento 1) y 5 personas (Apartamento 2).</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">¿Casa del Convento tiene balcón?</h3>
+                        <p class="text-gray-700">Sí, algunas opciones de alojamiento tienen balcón. Encontrarás más información sobre este y otros servicios e instalaciones de Casa del Convento en esta página.</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">¿Cuál es el horario de entrada y salida de Casa del Convento?</h3>
+                        <p class="text-gray-700">Podrás hacer el check-in en Casa del Convento a partir de las 14:00 y el check-out hasta las 10:00.</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">¿Cuántos dormitorios tiene Casa del Convento?</h3>
+                        <p class="text-gray-700">En Casa del Convento puedes elegir entre varias opciones de alojamiento (sujeto a disponibilidad). Disponen de: 1 dormitorio (Apartamento 1) y 3 dormitorios (Apartamento 2).</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">¿Cuánto cuesta alojarse en Casa del Convento?</h3>
+                        <p class="text-gray-700">Los precios en Casa del Convento pueden variar en función de la estancia (fechas, condiciones del hotel, etc.). Elige tus fechas para ver el precio. Precios actuales: 191€ por 2 noches para el Apartamento 1 (4 pers.) y 196€ por 2 noches para el Apartamento 2 (5 pers.).</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">¿A qué distancia está Casa del Convento del centro de Montán?</h3>
+                        <p class="text-gray-700">Casa del Convento está a 200 m del centro de Montán.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Reserva y Contacto -->
+        <section id="reserva" class="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-gray-800 mb-8 text-center section-title">Reserva Tu Estancia</h2>
+                <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
+                    <!-- Información de Precios -->
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Precios y Disponibilidad</h3>
+                        <div class="space-y-6 mb-8">
+                            <div class="border-l-4 border-amber-500 pl-4">
+                                <h4 class="font-bold text-lg text-gray-800">Apartamento 1 (4 pers.)</h4>
+                                <p class="text-gray-600 text-sm mb-2">Cama doble + sofá cama</p>
+                                <p class="text-3xl font-extrabold text-amber-600">191€ <span class="text-sm font-normal text-gray-600">/ 2 noches</span></p>
+                                <p class="text-sm text-gray-600 mt-2">Cancelación gratis antes del 14 de noviembre de 2025</p>
+                                <p class="text-sm text-gray-600">No pagues nada hasta el 12 de noviembre de 2025</p>
+                            </div>
+                            <div class="border-l-4 border-green-500 pl-4">
+                                <h4 class="font-bold text-lg text-gray-800">Apartamento 2 (5 pers.)</h4>
+                                <p class="text-gray-600 text-sm mb-2">3 dormitorios (2 dobles + 1 individual)</p>
+                                <p class="text-3xl font-extrabold text-green-600">196€ <span class="text-sm font-normal text-gray-600">/ 2 noches</span></p>
+                                <p class="text-sm text-gray-600 mt-2">Cancelación gratis antes del 14 de noviembre de 2025</p>
+                                <p class="text-sm text-gray-600">No pagues nada hasta el 12 de noviembre de 2025</p>
+                            </div>
+                        </div>
+                        <div class="bg-green-50 border-2 border-green-200 rounded-xl p-6 mb-6">
+                            <p class="text-sm text-gray-700 mb-2">
+                                <strong class="text-green-700">✓ Incluido en el precio:</strong>
+                            </p>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Limpieza final</li>
+                                <li>• Ropa de cama y toallas</li>
+                                <li>• WiFi gratis</li>
+                                <li>• Calefacción y agua caliente</li>
+                                <li>• Parking gratuito</li>
+                            </ul>
+                        </div>
+                        <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                            <p class="text-sm text-gray-700">
+                                <strong>📅 Cancelación:</strong> Gratis hasta 14 días antes de la llegada
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Formulario de Contacto -->
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl shadow-xl p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-6">Contacta con Nosotros</h3>
+                        <p class="mb-8 text-blue-50">
+                            ¿Listo para tu escapada? Contáctanos directamente para consultar disponibilidad, hacer tu reserva o resolver cualquier duda.
+                        </p>
+                        <div class="space-y-6 mb-8">
+                            <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                                <span class="text-3xl mr-4">📧</span>
+                                <div>
+                                    <p class="font-semibold text-sm">Email</p>
+                                    <p class="text-lg">salvalujan@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                                <span class="text-3xl mr-4">📱</span>
+                                <div>
+                                    <p class="font-semibold text-sm">Teléfono</p>
+                                    <p class="text-lg">+34 626 334 988</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <a href="mailto:salvalujan@gmail.com?subject=Consulta Casa del Convento Montán"
+                               class="block w-full px-8 py-4 bg-white text-blue-600 font-bold rounded-lg shadow-lg hover:bg-gray-50 transition-all transform hover:scale-105 text-center">
+                                📧 Enviar Email
+                            </a>
+                            <a href="https://wa.me/34626334988?text=Hola, me gustaría consultar disponibilidad para la Casa del Convento en Montán"
+                               target="_blank"
+                               class="block w-full px-8 py-4 bg-green-600 text-white font-bold rounded-lg shadow-lg hover:bg-green-700 transition-all transform hover:scale-105 text-center">
+                                💬 WhatsApp Directo
+                            </a>
+                        </div>
+                        <p class="mt-8 text-sm text-blue-50 text-center">
+                            ⚡ Respuesta en menos de 24 horas
+                        </p>
+                    </div>
+                </div>
+                <!-- Políticas de Cancelación -->
+                <div class="max-w-5xl mx-auto mt-12 bg-white rounded-2xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Política de Cancelación</h3>
+                    <div class="grid md:grid-cols-3 gap-6 text-center">
+                        <div>
+                            <div class="text-4xl mb-3">✅</div>
+                            <h4 class="font-bold text-gray-800 mb-2">Cancelación Gratuita</h4>
+                            <p class="text-sm text-gray-600">Hasta 14 días antes de la llegada</p>
+                        </div>
+                        <div>
+                            <div class="text-4xl mb-3">⚠️</div>
+                            <h4 class="font-bold text-gray-800 mb-2">Cargo por modificación</h4>
+                            <p class="text-sm text-gray-600">Entre 14 y 2 días antes</p>
+                        </div>
+                        <div>
+                            <div class="text-4xl mb-3">❌</div>
+                            <h4 class="font-bold text-gray-800 mb-2">Sin Reembolso</h4>
+                            <p class="text-sm text-gray-600">Menos de 2 días antes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden">
+            <span id="close-lightbox" class="absolute top-4 right-4 text-white text-4xl cursor-pointer p-4 hover:text-amber-400 transition-colors">&times;</span>
+            <img id="lightbox-image" src="" alt="Imagen ampliada" style="max-width: 95vw; max-height: 95vh; width: auto; height: auto; object-fit: contain;" class="rounded-lg shadow-2xl">
+        </div>
+    </main>
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-amber-400">Casa del Convento</h3>
+                    <p class="text-gray-400 text-sm">
+                        Apartamentos rurales en el Convento de los Servitas, Montán. Experiencia única entre historia y naturaleza.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-amber-400">Contacto</h3>
+                    <p class="text-gray-400 text-sm mb-2">📧 salvalujan@gmail.com</p>
+                    <p class="text-gray-400 text-sm mb-2">📱 +34 626 334 988</p>
+                    <p class="text-gray-400 text-sm">📍 Pl. de Sol, no 3, 12447 Montán, España</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-amber-400">Enlaces Rápidos</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#informacion" class="text-gray-400 hover:text-amber-400 transition-colors">Información</a></li>
+                        <li><a href="#servicios" class="text-gray-400 hover:text-amber-400 transition-colors">Servicios</a></li>
+                        <li><a href="#galeria" class="text-gray-400 hover:text-amber-400 transition-colors">Galería</a></li>
+                        <li><a href="#anfitrion" class="text-gray-400 hover:text-amber-400 transition-colors">Anfitrión</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-amber-400 transition-colors">FAQ</a></li>
+                        <li><a href="#reserva" class="text-gray-400 hover:text-amber-400 transition-colors">Reservar</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-500 text-sm">&copy; 2024 Casa del Convento - Apartamentos Rurales. Todos los derechos reservados.</p>
+                <p class="text-gray-600 text-xs mt-2">Diseño web profesional optimizado para reservas</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        // Close mobile menu when clicking on a link
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        // Lightbox functionality
+        const galleryImages = document.querySelectorAll('#galeria img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const closeLightbox = document.getElementById('close-lightbox');
+        galleryImages.forEach(image => {
+            image.addEventListener('click', () => {
+                lightbox.classList.remove('hidden');
+                lightboxImage.src = image.src;
+            });
+        });
+        closeLightbox.addEventListener('click', () => {
+            lightbox.classList.add('hidden');
+        });
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.add('hidden');
+            }
+        });
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        // Observe feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
+
