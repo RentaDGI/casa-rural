@@ -1,0 +1,20 @@
+*"Estoy trabajando en la web de Casa del Convento, un alojamiento rural en Montán (Castellón), con 2 apartamentos independientes. El sitio está hecho en un solo archivo index.html, alojado en IONOS, y ya subido al dominio casadelconvento.es.
+
+Quiero optimizarla para SEO local (palabras clave como ‘alojamiento rural Montán’, ‘apartamentos con vistas Castellón’, ‘casa convento turismo’), mejorar velocidad, experiencia móvil, y conversión (reservas por email/WhatsApp).
+
+Ya tiene:
+
+Favicon SVG con ⛪, theme-color y OG tags (implementados).
+Schema.org JSON-LD (Accommodation + Offer).
+<alt> en imágenes, loading="lazy", preconnect a Imgur.
+robots.txt y sitemap.xml básicos.
+Necesito ayuda con:
+✅ Registro en Google Search Console / Google Business
+✅ Generación de ficha para Airbnb/Booking a partir del HTML
+✅ PDF de reserva automático (con Google Apps Script + email)
+✅ Análisis de Core Web Vitals o auditoría Lighthouse
+✅ Traducción a inglés (multilenguaje sencillo, sin framework)
+
+El HTML actual está autocontenido, sin CSS/JS externos (solo CDN de Tailwind y Google Fonts), y usa imágenes en Imgur.
+
+Mi nombre es Salvador, (contacto: salvalujan@gmail.com / 626 334 988), y la licencia turística es A-CS-226."* 

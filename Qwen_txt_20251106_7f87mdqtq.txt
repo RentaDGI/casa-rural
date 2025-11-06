@@ -1,0 +1,90 @@
+✅ GUIA DE IMPLEMENTACIÓN — Casa del Convento
+
+1. SUBIR A IONOS
+────────────────────────────────────────
+- Accede a tu hosting en IONOS (Panel de control → Hosting → Administrador de archivos).
+- Sube los siguientes archivos a la carpeta `/html/`:
+   • index.html → versión en español (página principal)
+   • index-en.html → versión en inglés
+   • robots.txt (ver abajo)
+   • sitemap.xml (ver abajo)
+
+2. MULTIDIOMA: DOS OPCIONES
+────────────────────────────────────────
+Opción A (recomendada para simplicidad):
+   - index.html → https://casadelconvento.es (ES)
+   - index-en.html → https://casadelconvento.es/en.html
+   → Enlace /en en menú: <a href="/en.html">🇬🇧 EN</a>
+
+Opción B (más profesional, requiere .htaccess):
+   - Carpeta `/en/` con index.html dentro → https://casadelconvento.es/en/
+   - Crear `.htaccess` en /html/:
+        Options +FollowSymLinks
+        RewriteEngine On
+        RewriteRule ^en/?$ en/index.html [L]
+
+   → Ventaja: URLs limpias, mejor para SEO internacional.
+
+3. ARCHIVOS DE SEO BÁSICO
+────────────────────────────────────────
+📄 robots.txt (sube a /html/robots.txt):
+User-agent: *
+Allow: /
+
+Sitemap: https://casadelconvento.es/sitemap.xml
+Host: casadelconvento.es
+
+📄 sitemap.xml (sube a /html/sitemap.xml):
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://casadelconvento.es</loc>
+    <lastmod>2025-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://casadelconvento.es/en.html</loc>
+    <lastmod>2025-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+</urlset>
+
+4. GOOGLE SEARCH CONSOLE
+────────────────────────────────────────
+a) Ve a https://search.google.com/search-console
+b) Añade la propiedad: https://casadelconvento.es (URL prefix)
+c) Verifica mediante "HTML file" → IONOS te da un archivo `googleXXX.html`
+   - Sube ese archivo a /html/ y haz clic en "Verify"
+d) Una vez verificado:
+   - Envía sitemap.xml en "Sitemaps"
+   - Usa "URL Inspection" para indexar manualmente la homepage
+
+5. GOOGLE BUSINESS PROFILE (ES/EN)
+────────────────────────────────────────
+- Crea o reclama: "Casa del Convento (A-CS-226)"
+- Dirección: Pl. de Sol, 3, 12447 Montán, Castellón
+- Teléfono: +34 626 334 988
+- Sitio web: https://casadelconvento.es
+- Categoría principal: "Vacation rental"
+- Sube 10 fotos (usa las de Imgur, descárgalas y súbelas)
+- Añade atributos: WiFi, Free parking, Historic site, Mountain view
+- Responde a reseñas (aunque aún no haya → programa respuestas estándar)
+
+6. VALIDACIÓN SEO
+────────────────────────────────────────
+✅ Usa estas herramientas GRATIS:
+   • Schema Validator: https://validator.schema.org → pega tu JSON-LD
+   • Rich Results Test: https://search.google.com/test/rich-results
+   • PageSpeed Insights: https://pagespeed.web.dev → debería dar >90 móvil
+
+7. MANTENIMIENTO
+────────────────────────────────────────
+- Actualiza `lastmod` en sitemap.xml cada vez que modifiques precios/descripción.
+- Cada 3 meses: revisa Google Search Console → "Coverage", "Enhancements".
+- Añade blog (opcional): `/blog/` con posts como "Rutas de senderismo desde Montán", mejora SEO local.
+
+🎯 Bonus: Para Airbnb/Booking, exporta la descripción de `index.html` + fotos → ya tienes contenido listo.
+
+¿Necesitas que te genere los archivos completos como .zip? Puedo darte enlaces de descarga directa.
